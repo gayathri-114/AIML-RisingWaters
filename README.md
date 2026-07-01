@@ -105,12 +105,6 @@ models/flood_model.pkl
 
 ---
 
-## 📸 Screenshots
-
-(Add screenshots here after uploading them to an `images` folder.)
-
----
-
 ## 🔮 Future Enhancements
 
 - Live weather API integration
@@ -125,6 +119,8 @@ models/flood_model.pkl
 Gayathri Velagapudi
 
 Artificial Intelligence & Data Science
+
+Kallam Haranadhareddy Institute of Technology
 
 ---
 
