@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flood Prediction System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🌊 Flood Prediction System</h1>
+
+    <form action="/predict" method="POST">
+
+        <input type="number" step="any" name="temp" placeholder="Temperature" value="{{values.temp if values else '' }}" required>
+
+        <input type="number" step="any" name="humidity" placeholder="Humidity" value="{{ values.humidity if values else '' }}" required>
+
+        <input type="number" step="any" name="cloud" placeholder="Cloud Cover" value="{{ values.cloud if values else '' }}" required>
+
+        <input type="number" step="any" name="annual" placeholder="Annual Rainfall" value="{{ values.annual if values else '' }}" required>
+
+        <input type="number" step="any" name="janfeb" placeholder="Jan-Feb Rainfall" value="{{ values.janfeb if values else '' }}" required>
+
+        <input type="number" step="any" name="marmay" placeholder="Mar-May Rainfall" value="{{ values.marmay if values else '' }}" required>
+
+        <input type="number" step="any" name="junsep" placeholder="Jun-Sep Rainfall" value="{{ values.junsep if values else '' }}" required>
+
+        <input type="number" step="any" name="octdec" placeholder="Oct-Dec Rainfall" value="{{ values.octdec if values else '' }}" required>
+
+        <input type="number" step="any" name="avgjune" placeholder="Average June Rainfall" value="{{ values.avgjune if values else '' }}" required>
+
+        <input type="number" step="any" name="sub" placeholder="Subdivision Rainfall" value="{{ values.sub if values else '' }}" required>
+
+        <button type="submit">Predict Flood</button>
+
+    </form>
+
+    {% if prediction %}
+
+    <div class="result">
+
+        <h2>{{ prediction }}</h2>
+
+        <h3>Confidence: {{ confidence }}%</h3>
+
+        <p><strong>Recommendation:</strong></p>
+
+        <p>{{ recommendation }}</p>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+</html>
